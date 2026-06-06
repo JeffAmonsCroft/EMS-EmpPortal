@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS-signup</title>
+    <style>
+        body{
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        main{
+            position: fixed;
+            top: 1%;
+            width: 95%;
+            height: 98%;
+            background-color: rgb(12, 152, 152);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+        }
+        main h1{
+            padding: 0px;
+        }
+        .email{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        main input{
+            border:  none;
+            border-radius: 5px;
+            height: 40px;
+            text-align: center;
+            font-size: large;
+        }
+        .name{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .contact{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .password{
+            display: flex;
+            flex-direction: column;
+            padding: 10px; 
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons button{
+            font-size: large;
+            width: 90%;
+            height: 50px;
+            background-color: blue;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            transition: .3s all;
+        }
+        .buttons button:hover{
+            background-color: rgb(62, 27, 234);
+            transform: translateX(10px);
+        }
+        .buttons p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Sign Up</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="email">
+                <label for="email">Email:</label>
+                <input name="email" type="email">
+            </div>
+            <div class="name">
+                <label for="">Name:</label>
+                <input name="name" type="text">
+            </div>
+            <div class="contact">
+                <label for="">Contact</label>
+                <input name="contact" type="number">
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input name="password" type="password">
+            </div>
+            <div class="buttons">
+                <button type="submit">Sign Up</button>
+                <p>Already have an account?<a href="{% url 'login' %}"> Log In</a></p>
+            </div>
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+    </main>
+</body>
+</html>

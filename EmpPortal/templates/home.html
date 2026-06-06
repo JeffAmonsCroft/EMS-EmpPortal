@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS-home</title>
+    <style>
+        body{
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        header{
+            position: fixed;
+            top: 0px;
+            /* left: 0px; */
+            margin: 0px;
+            background-color: aquamarine;
+            width: 100%;
+            height: 10%;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .head{
+            padding: 5%;
+        }
+        .head h1{
+            color: navy;
+        }
+        .head-btn{
+            padding-left: 50%;
+        }
+        .head-btn button{
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            color:  white;
+            height: 30px;
+
+        }
+        main{
+            padding-top: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .emp_card{
+            background-color: rgb(8, 157, 157);
+            width: 90%;
+            border-radius: 10px;
+            padding: 10px;
+            height: 20%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+        }
+        .announcements_card{
+            background-color: rgb(59, 187, 187);
+            width: 90%;
+            border-radius: 10px;
+            padding: 10px;
+            height: 20%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+        }
+        .reply_card{
+            background-color: rgb(8, 157, 157);
+            width: 90%;
+            border-radius: 10px;
+            padding: 10px;
+            height: 20%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+        }
+        .complaint_card{
+            background-color: rgb(8, 157, 157);
+            width: 90%;
+            border-radius: 10px;
+            padding: 10px;
+            height: 40%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+            /* align-items: center; */
+        }
+        .complaint_card button{
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 40%;
+            width: 50%;
+            padding: 5%;
+        }
+        .leave_card{
+            background-color: rgb(59, 187, 187);
+            width: 90%;
+            border-radius: 10px;
+            padding: 10px;
+            height: 40%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+        }
+        .leave_card button{
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 50%;
+            width: 50%;
+            padding: 5%;
+        }
+        .LeaveCard{
+            display: none;
+            position: fixed;
+            top: 20%;
+            right: 5%;
+            width: 90%;
+            height: 70%;
+            border: none;
+            border-radius: 5px;
+            background-color: lightblue;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            gap: 15px;
+        }
+        .LeaveCard input{
+            border:  none;
+            border-radius: 5px;
+            height: 40px;
+            text-align: center;
+            font-size: x-large;
+            color: blue;
+            /* height: 30%; */
+        }
+        .leave_card_buttons{
+            display: flex;
+            gap: 15px;
+            padding: 10%;
+            width: 80%;
+            height: 50%;
+        }
+        .leave_card_buttons #sbmt_btn{
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            width: 50%;
+            height: 50%;
+            font-size: x-large;
+        }
+        .leave_card_buttons #close_btn{
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            width: 50%;
+            height: 50%;
+            font-size: x-large;
+        }
+        
+        .ComplaintCard{
+            display: none;
+            position: fixed;
+            top: 20%;
+            right: 5%;
+            width: 90%;
+            height: 70%;
+            border: none;
+            border-radius: 5px;
+            background-color: lightblue;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            gap: 15px;
+        }
+        .ComplaintCard input{
+            border:  none;
+            border-radius: 5px;
+            height: 40%;
+            text-align: center;
+            font-size: x-large;
+            color: blue;
+            /* height: 30%; */
+        }
+        .complaint_card_buttons{
+            display: flex;
+            gap: 15px;
+            padding: 10%;
+            width: 80%;
+            height: 50%;
+        }
+        .complaint_card_buttons #sbmt_btn{
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            width: 50%;
+            height: 50%;
+            font-size: x-large;
+        }
+        .complaint_card_buttons #close_btn{
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            width: 50%;
+            height: 50%;
+            font-size: x-large;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="head">
+            <h1>EMS</h1>
+        </div>
+        <div class="head-btn">
+            <a href="{% url 'logout' %}"><button>Log Out</button></a>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        <div class="emp_card">
+            <h3>Welcome, {{ Name.upper }}!</h1>
+            <p>Employee ID: <b>{{ Emp_Id }}</b></p>
+            <p>Category: <b>{{ Job }}</b></p>
+            <p>Address: <b>{{ Address }}</b></p>
+        </div>
+        <div class="announcements_card">
+            <h3>Announcements</h3>
+            <p>{{ Announcements }}</p>
+        </div>
+        <!-- <div class="reply_card">
+            <h3>Admin Replies</h3>
+            <p>Your leave is being processed</p>
+            <p>Your complait is being handled by the admins</p>
+        </div> -->
+        <div class="complaint_card">
+            <h3>Complaints</h3>
+            <button onclick="OpenComplaintCard()"><b>Write Complaint</b></button>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="ComplaintCard" id="popupComplaintCard">
+                <h3>Complaint Details</h3>
+
+                <label for="">Complaint Body</label>
+                <input type="text" name="Complaints"  placeholder="body" required>
+
+                <label for="">Email</label>
+                <input type="email" name="email"  placeholder="example@gmail.com" required>
+                
+                <div class="complaint_card_buttons">
+                    <button id="sbmt_btn" type="submit">Submit</button>
+                    <button id="close_btn" onclick="CloseComplaintCard()">Close</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="leave_card">
+            <h3>Apply for Leave</h3>
+            <button onclick="OpenLeaveCard()"><b>Apply</b></button>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="LeaveCard" id="popupLeaveCard">
+                <h3>Enter Leave Details</h3>
+                <label for="">Reason</label>
+                <input type="text" name="Leaves" placeholder="example" required>
+
+                <label for="">Email</label>
+                <input type="email" name="email" placeholder="example@gmail.com">
+                
+                <div class="leave_card_buttons">
+                    <button id="sbmt_btn" type="submit">Submit</button>
+                    <button id="close_btn" onclick="CloseLeaveCard()">Close</button>
+                </div>
+            </div>
+        </form>
+        {% endblock content %}
+    </main>
+    <script>
+        function OpenLeaveCard(){
+            document.getElementById("popupLeaveCard").style.display = "flex";
+        }
+        function CloseLeaveCard(){
+            document.getElementById("popupLeaveCard").style.display = "none";
+        }
+        function OpenComplaintCard(){
+            document.getElementById("popupComplaintCard").style.display = "flex";
+        }
+        function CloseComplaintCard(){
+            document.getElementById("popupComplaintCard").style.display = "none";
+        }
+    </script> 
+    
+</body>
+</html>
