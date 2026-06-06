@@ -25,6 +25,8 @@ SECRET_KEY = 'django-insecure-fb+^^i38l&18pbrme#fwr=1vdp1#n_0t@1modnt1csj76ff2d-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = ['ems-empportal.onrender.com']
+
 ALLOWED_HOSTS = ['ems-empportal.onrender.com']
 
 
