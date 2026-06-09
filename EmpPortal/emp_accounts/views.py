@@ -23,7 +23,7 @@ def login_view(request):
 
         if Email and Emp_Id:
             try:
-                employee = Member.objects.get(Email=Email, Emp_Id=Emp_Id)
+                employee = Member.objects.filter(Email=Email, Emp_Id=Emp_Id).first()
                 request.session['Name'] = employee.Name
                 request.session['Emp_Id'] = employee.Emp_Id
                 request.session['Job'] = employee.Job
