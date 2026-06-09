@@ -43,7 +43,7 @@ def homepage_view(request):
     if 'Emp_Id' not in request.session:
         return redirect('login')
     
-    admin_email = Member.objects.get(Job="Admin")
+    admin_email = Member.objects.filter(Job="Admin").first()
     admin = Member.objects.get(Email=admin_email) 
     request.session['Announcements']  = admin.Announcements
 
