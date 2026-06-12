@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fb+^^i38l&18pbrme#fwr=1vdp1#n_0t@1modnt1csj76ff2d-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 CSRF_TRUSTED_ORIGINS = ['https://ems-empportal.onrender.com']
 
